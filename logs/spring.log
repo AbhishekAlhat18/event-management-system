@@ -1,0 +1,83 @@
+2025-01-16 14:53:30,643 [INFO] com.project.event_management_system.EventManagementSystemApplication {restartedMain} Starting EventManagementSystemApplication using Java 22.0.2 with PID 21766 (/Users/abhishekalhat/Projects/SpringbootProjects/event-management-system/target/classes started by abhishekalhat in /Users/abhishekalhat/Projects/SpringbootProjects/event-management-system)
+2025-01-16 14:53:30,644 [DEBUG] com.project.event_management_system.EventManagementSystemApplication {restartedMain} Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-16 14:53:30,645 [INFO] com.project.event_management_system.EventManagementSystemApplication {restartedMain} No active profile set, falling back to 1 default profile: "default"
+2025-01-16 14:53:30,680 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor {restartedMain} Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-16 14:53:30,680 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor {restartedMain} For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-16 14:53:31,244 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-16 14:53:31,245 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-16 14:53:31,261 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 12 ms. Found 0 JDBC repository interfaces.
+2025-01-16 14:53:31,272 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-16 14:53:31,273 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 14:53:31,278 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2025-01-16 14:53:31,660 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port 8080 (http)
+2025-01-16 14:53:31,671 [INFO] org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2025-01-16 14:53:31,671 [INFO] org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 14:53:31,699 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2025-01-16 14:53:31,699 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 1019 ms
+2025-01-16 14:53:31,802 [INFO] org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 14:53:31,841 [INFO] org.hibernate.Version {restartedMain} HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 14:53:31,865 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator {restartedMain} HHH000026: Second-level cache disabled
+2025-01-16 14:53:32,056 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo {restartedMain} No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 14:53:32,077 [INFO] com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-1 - Starting...
+2025-01-16 14:53:32,357 [INFO] com.zaxxer.hikari.pool.HikariPool {restartedMain} HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@57b2532e
+2025-01-16 14:53:32,359 [INFO] com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-1 - Start completed.
+2025-01-16 14:53:32,400 [WARN] org.hibernate.orm.deprecation {restartedMain} HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-16 14:53:32,400 [WARN] org.hibernate.orm.deprecation {restartedMain} HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-16 14:53:32,412 [INFO] org.hibernate.orm.connections.pooling {restartedMain} HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 14:53:33,195 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 14:53:33,971 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 14:53:34,012 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-16 14:53:34,339 [INFO] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2025-01-16 14:53:34,357 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 14:53:34,366 [INFO] com.project.event_management_system.EventManagementSystemApplication {restartedMain} Started EventManagementSystemApplication in 4.182 seconds (process running for 4.938)
+2025-01-16 15:01:45,599 [INFO] org.springframework.boot.web.embedded.tomcat.GracefulShutdown {SpringApplicationShutdownHook} Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-16 15:01:45,606 [INFO] org.springframework.boot.web.embedded.tomcat.GracefulShutdown {tomcat-shutdown} Graceful shutdown complete
+2025-01-16 15:01:45,613 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {SpringApplicationShutdownHook} Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 15:01:45,618 [INFO] com.zaxxer.hikari.HikariDataSource {SpringApplicationShutdownHook} HikariPool-1 - Shutdown initiated...
+2025-01-16 15:01:45,627 [INFO] com.zaxxer.hikari.HikariDataSource {SpringApplicationShutdownHook} HikariPool-1 - Shutdown completed.
+2025-01-16 15:01:59,164 [INFO] com.project.event_management_system.EventManagementSystemApplication {restartedMain} Starting EventManagementSystemApplication using Java 22.0.2 with PID 21852 (/Users/abhishekalhat/Projects/SpringbootProjects/event-management-system/target/classes started by abhishekalhat in /Users/abhishekalhat/Projects/SpringbootProjects/event-management-system)
+2025-01-16 15:01:59,165 [DEBUG] com.project.event_management_system.EventManagementSystemApplication {restartedMain} Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-16 15:01:59,166 [INFO] com.project.event_management_system.EventManagementSystemApplication {restartedMain} No active profile set, falling back to 1 default profile: "default"
+2025-01-16 15:01:59,205 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor {restartedMain} Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-16 15:01:59,205 [INFO] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor {restartedMain} For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-16 15:01:59,743 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-16 15:01:59,743 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-01-16 15:01:59,755 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 7 ms. Found 0 JDBC repository interfaces.
+2025-01-16 15:01:59,764 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-16 15:01:59,765 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-16 15:01:59,771 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2025-01-16 15:02:00,151 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port 8080 (http)
+2025-01-16 15:02:00,162 [INFO] org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2025-01-16 15:02:00,162 [INFO] org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-16 15:02:00,189 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2025-01-16 15:02:00,189 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 983 ms
+2025-01-16 15:02:00,291 [INFO] org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-16 15:02:00,329 [INFO] org.hibernate.Version {restartedMain} HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-16 15:02:00,354 [INFO] org.hibernate.cache.internal.RegionFactoryInitiator {restartedMain} HHH000026: Second-level cache disabled
+2025-01-16 15:02:00,544 [INFO] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo {restartedMain} No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-16 15:02:00,563 [INFO] com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-1 - Starting...
+2025-01-16 15:02:00,825 [INFO] com.zaxxer.hikari.pool.HikariPool {restartedMain} HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3c870c40
+2025-01-16 15:02:00,826 [INFO] com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-1 - Start completed.
+2025-01-16 15:02:00,859 [WARN] org.hibernate.orm.deprecation {restartedMain} HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-16 15:02:00,860 [WARN] org.hibernate.orm.deprecation {restartedMain} HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-16 15:02:00,874 [INFO] org.hibernate.orm.connections.pooling {restartedMain} HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-16 15:02:01,576 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-16 15:02:01,828 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-16 15:02:01,877 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-16 15:02:02,192 [INFO] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2025-01-16 15:02:02,209 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port 8080 (http) with context path '/'
+2025-01-16 15:02:02,217 [INFO] com.project.event_management_system.EventManagementSystemApplication {restartedMain} Started EventManagementSystemApplication in 3.535 seconds (process running for 3.902)
