@@ -35,6 +35,7 @@ public class Registration{
     private String contactNumber;
     @Column(length = 30)
     private String verifiedCode;
+
     private Boolean authorize;
 
     @OneToMany(mappedBy="registration", cascade = CascadeType.ALL)
@@ -61,6 +62,10 @@ public class Registration{
     @JsonIgnore
     private List<Complaint> complaints;  // Complaints against this organizer
 
+    @OneToMany(mappedBy="registrationRequest", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Token> tokens;
+
     public List<Offer> getOffer() {
         return offer;
     }
@@ -68,9 +73,6 @@ public class Registration{
     public void setOffer(List<Offer> offer) {
         this.offer = offer;
     }
-
-
-
 
 
     public List<Booking> getBookings() {
@@ -97,14 +99,16 @@ public class Registration{
         this.event = event;
     }
 
-
     public void setAuthorize(Boolean authorize) {
         this.authorize = authorize;
     }
 
-
     public boolean isAuthorize()
     {
+        return authorize;
+    }
+
+    public Boolean getAuthorize() {
         return authorize;
     }
 
@@ -180,10 +184,13 @@ public class Registration{
         this.booking = booking;
     }
 
-    public Boolean getAuthorize() {
-        return authorize;
-    }
 
+    @PrePersist
+    public void prePersist() {
+        if (authorize == null) {
+            authorize = false;
+        }
+    }
 
     @Override
     public String toString() {

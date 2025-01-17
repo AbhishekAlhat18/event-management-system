@@ -83,3 +83,5 @@
 2025-01-16 15:02:02,217 [INFO] com.project.event_management_system.EventManagementSystemApplication {restartedMain} Started EventManagementSystemApplication in 3.535 seconds (process running for 3.902)
 2025-01-16 17:29:20,141 [WARN] com.zaxxer.hikari.pool.HikariPool {HikariPool-1 housekeeper} HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h49m49s15ms).
 2025-01-16 17:32:00,101 [WARN] com.zaxxer.hikari.pool.HikariPool {HikariPool-1 housekeeper} HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m9s946ms).
+2025-01-16 22:07:15,867 [WARN] com.zaxxer.hikari.pool.HikariPool {HikariPool-1 housekeeper} HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m14s180ms).
+2025-01-16 22:23:50,094 [WARN] com.zaxxer.hikari.pool.HikariPool {HikariPool-1 housekeeper} HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m34s227ms).

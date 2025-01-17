@@ -4,9 +4,11 @@ import com.project.event_management_system.model.Booking;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface BookingRepository extends JpaRepository<Booking, Integer> {
 
     @Query(value = "select * from booking_table where user_id =?1", nativeQuery=true)
