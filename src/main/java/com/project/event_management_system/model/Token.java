@@ -3,16 +3,16 @@ package com.project.event_management_system.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@Builder
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-
 public class Token {
 
     @Id
@@ -23,7 +23,7 @@ public class Token {
     private LocalDateTime expiresAt;
     private LocalDateTime validatedAt;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "userId", nullable = false)
     private Registration registrationRequest;
 }

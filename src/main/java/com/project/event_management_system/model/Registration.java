@@ -8,10 +8,16 @@ import java.util.List;
 import jakarta.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
-
-//Entity and table is not required:
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name ="registration")
 public class Registration{
@@ -34,8 +40,9 @@ public class Registration{
     @Column(nullable = false, length = 15)
     private String contactNumber;
     @Column(length = 30)
-    private String verifiedCode;
+    private String verificationCode;
 
+    @Column(nullable = false)
     private Boolean authorize;
 
     @OneToMany(mappedBy="registration", cascade = CascadeType.ALL)
@@ -62,127 +69,127 @@ public class Registration{
     @JsonIgnore
     private List<Complaint> complaints;  // Complaints against this organizer
 
-    @OneToMany(mappedBy="registrationRequest", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy="registrationRequest", cascade = CascadeType.ALL)
     @JsonIgnore
-    private List<Token> tokens;
+    private Token token;
 
-    public List<Offer> getOffer() {
-        return offer;
-    }
-
-    public void setOffer(List<Offer> offer) {
-        this.offer = offer;
-    }
-
-
-    public List<Booking> getBookings() {
-        return bookings;
-    }
-
-    public void setBookings(List<Booking> bookings) {
-        this.bookings = bookings;
-    }
-
-    public List<Complaint> getComplaints() {
-        return complaints;
-    }
-
-    public void setComplaints(List<Complaint> complaints) {
-        this.complaints = complaints;
-    }
-
-    public List<Event> getEvent() {
-        return event;
-    }
-
-    public void setEvent(List<Event> event) {
-        this.event = event;
-    }
-
-    public void setAuthorize(Boolean authorize) {
-        this.authorize = authorize;
-    }
-
-    public boolean isAuthorize()
-    {
-        return authorize;
-    }
-
-    public Boolean getAuthorize() {
-        return authorize;
-    }
-
-    public void setVerifiedCode(String verifiedCode) {
-        this.verifiedCode = verifiedCode;
-    }
-
-    public String getVerifiedCode() {
-        return verifiedCode;
-    }
-
-    public int getRegistrationId() {
-        return registrationId;
-    }
-
-    public void setRegistrationId(int registrationId) {
-        this.registrationId = registrationId;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public String getContactNumber() {
-        return contactNumber;
-    }
-
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
-    }
-
-    public List<Booking> getBooking() {
-        return booking;
-    }
-
-    public void setBooking(List<Booking> booking) {
-        this.booking = booking;
-    }
+//    public List<Offer> getOffer() {
+//        return offer;
+//    }
+//
+//    public void setOffer(List<Offer> offer) {
+//        this.offer = offer;
+//    }
+//
+//
+//    public List<Booking> getBookings() {
+//        return bookings;
+//    }
+//
+//    public void setBookings(List<Booking> bookings) {
+//        this.bookings = bookings;
+//    }
+//
+//    public List<Complaint> getComplaints() {
+//        return complaints;
+//    }
+//
+//    public void setComplaints(List<Complaint> complaints) {
+//        this.complaints = complaints;
+//    }
+//
+//    public List<Event> getEvent() {
+//        return event;
+//    }
+//
+//    public void setEvent(List<Event> event) {
+//        this.event = event;
+//    }
+//
+//    public void setAuthorize(Boolean authorize) {
+//        this.authorize = authorize;
+//    }
+//
+//    public boolean isAuthorize()
+//    {
+//        return authorize;
+//    }
+//
+//    public Boolean getAuthorize() {
+//        return authorize;
+//    }
+//
+//    public String getVerificationCode() {
+//        return verificationCode;
+//    }
+//
+//    public void setVerificationCode(String verificationCode) {
+//        this.verificationCode = verificationCode;
+//    }
+//
+//    public int getRegistrationId() {
+//        return registrationId;
+//    }
+//
+//    public void setRegistrationId(int registrationId) {
+//        this.registrationId = registrationId;
+//    }
+//
+//    public String getFirstName() {
+//        return firstName;
+//    }
+//
+//    public void setFirstName(String firstName) {
+//        this.firstName = firstName;
+//    }
+//
+//    public String getLastName() {
+//        return lastName;
+//    }
+//
+//    public void setLastName(String lastName) {
+//        this.lastName = lastName;
+//    }
+//
+//    public String getEmail() {
+//        return email;
+//    }
+//
+//    public void setEmail(String email) {
+//        this.email = email;
+//    }
+//
+//    public String getPassword() {
+//        return password;
+//    }
+//
+//    public void setPassword(String password) {
+//        this.password = password;
+//    }
+//
+//    public String getRole() {
+//        return role;
+//    }
+//
+//    public void setRole(String role) {
+//        this.role = role;
+//    }
+//
+//    public String getContactNumber() {
+//        return contactNumber;
+//    }
+//
+//    public void setContactNumber(String contactNumber) {
+//        this.contactNumber = contactNumber;
+//    }
+//
+//    public List<Booking> getBooking() {
+//        return booking;
+//    }
+//
+//    public void setBooking(List<Booking> booking) {
+//        this.booking = booking;
+//    }
 
 
     @PrePersist
@@ -196,7 +203,7 @@ public class Registration{
     public String toString() {
         return "Registration [registrationId=" + registrationId + ", firstName=" + firstName + ", lastName="
                 + lastName + ", email=" + email + ", password=" + password + ", role=" + role + ", contactNumber="
-                + contactNumber + ", booking=" + booking + ", verifiedCode=" + verifiedCode + ", authorize=" + authorize
+                + contactNumber + ", booking=" + booking + ", verificationCode=" + verificationCode + ", authorize=" + authorize
                 + "]";
     }
 
