@@ -1,18 +1,20 @@
 package com.project.event_management_system.model;
 
 
-
-import java.io.Serializable;
-import java.util.List;
-
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name="booking_table")
 public class Booking {
 
     @Id
-    @GeneratedValue( strategy= GenerationType. AUTO, generator="native" )
+    @GeneratedValue( strategy= GenerationType. IDENTITY )
     //@GeneratedValue( strategy= GenerationType. AUTO)
     @Column(name="booking_id",unique=true, nullable=false)
     private int bookingId;
@@ -25,51 +27,12 @@ public class Booking {
     private Event event;
 
     @ManyToOne
-    @JoinColumn(name="user_id")
-    private Registration registration;
-
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     @ManyToOne
-    @JoinColumn(name="organizer_id")
-    private Registration organizerId;
+    @JoinColumn(name = "organizer_id", nullable = false)
+    private Organizer organizer;
 
-    public int getBookingId() {
-        return bookingId;
-    }
 
-    public void setBookingId(int bookingId) {
-        this.bookingId = bookingId;
-    }
-
-    public Event getEvent() {
-        return event;
-    }
-
-    public void setEvent(Event event) {
-        this.event = event;
-    }
-
-    public Registration getRegistration() {
-        return registration;
-    }
-
-    public void setRegistration(Registration registration) {
-        this.registration = registration;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Registration getOrganizerId() {
-        return organizerId;
-    }
-
-    public void setOrganizerId(Registration organizerId) {
-        this.organizerId = organizerId;
-    }
 }

@@ -10,7 +10,8 @@ import java.util.Optional;
 public interface TokenRepository extends JpaRepository<Token, Integer> {
     Optional<Token> findByToken(String Token);
 
-    @Query("SELECT t FROM Token t WHERE t.registrationRequest.registrationId = :registrationId")
-    Optional<Token> findTokenByUserId(@Param("registrationId") Integer registrationId);
+    // Update to query by Person's id or a concrete subclass (User or Organizer)
+    @Query("SELECT t FROM Token t WHERE t.person.id = :personId")
+    Optional<Token> findTokenByPersonId(@Param("personId") Integer personId);
 
 }

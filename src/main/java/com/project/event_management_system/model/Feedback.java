@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 public class Feedback {
 
     @Id
-     @GeneratedValue( strategy= GenerationType. AUTO, generator="native" )
+     @GeneratedValue( strategy= GenerationType.IDENTITY )
     //@GeneratedValue( strategy= GenerationType. AUTO)
 
     @Column(name="feedback_id",unique=true, nullable=false)

@@ -25,7 +25,7 @@ import lombok.ToString;
 public class Category {
 
     @Id
-    @GeneratedValue(strategy= GenerationType. AUTO, generator="native" )
+    @GeneratedValue(strategy= GenerationType.IDENTITY )
     //@GeneratedValue(strategy= GenerationType. AUTO)
 
     @Column(name="category_id",unique=true, nullable=false)

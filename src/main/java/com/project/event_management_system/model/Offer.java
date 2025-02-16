@@ -8,15 +8,21 @@ import jakarta.persistence.*;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="offer_table")
 public class Offer{
 
-
-
     @Id
-    @GeneratedValue( strategy= GenerationType. AUTO, generator="native" )
+    @GeneratedValue( strategy= GenerationType.IDENTITY )
     //@GeneratedValue( strategy= GenerationType. AUTO)
     @Column(name="offer_id", unique = true, nullable = false)
     private int offerId;
@@ -33,47 +39,6 @@ public class Offer{
 
     @ManyToOne
     @JoinColumn(name="organizer_id")
-    private Registration organizer;
-
-    public Registration getOrganizer() {
-        return organizer;
-    }
-
-    public void setOrganizer(Registration organizer) {
-        this.organizer = organizer;
-    }
-
-    public List<Event> getEvent() {
-        return event;
-    }
-
-    public void setEvent(List<Event> event) {
-        this.event = event;
-    }
-
-    public String getOfferDescription() {
-        return offerDescription;
-    }
-
-    public void setOfferDescription(String offerDescription) {
-        this.offerDescription = offerDescription;
-    }
-
-    public int getOfferId() {
-        return offerId;
-    }
-
-    public void setOfferId(int offerId) {
-        this.offerId = offerId;
-    }
-
-    public String getOfferName() {
-        return offerName;
-    }
-
-    public void setOfferName(String offerName) {
-        this.offerName = offerName;
-    }
-
+    private Organizer organizer;
 
 }
