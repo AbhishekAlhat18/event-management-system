@@ -1,30 +1,92 @@
 package com.project.event_management_system.model;
+import com.project.event_management_system.enums.OrganizerBankAccountDetailsStatus;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-
+import java.time.LocalDateTime;
 import java.util.List;
 
-@Entity
-@Table(name = "organizers")
-public class Organizer extends Person{
+@Getter
+@Setter
+@NoArgsConstructor
+@Entity(name="organizers")
+public class Organizer {
 
-    @OneToMany(mappedBy = "organizer", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Event> events; // Events created by the organizer
+    @Id
+    private Long id;  // Same as User ID, which maps to OrganizerProfile id
 
-    @OneToMany(mappedBy = "organizer", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Offer> offers; // Offers made by the organizer
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "organizer_id")
+    private User user;
 
-    @OneToMany(mappedBy = "organizer", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Booking> eventBookings; // Bookings related to the organizer's events
+    @Column(nullable = false, length = 100)
+    private String displayName;
 
-    @OneToMany(mappedBy = "accusedOrganizer", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Complaint> complaintsAgainst; // Complaints against the organizer
+
+    @Column(nullable = false, length = 100)
+    private String country;
+
+    @Column(nullable = false, length = 100)
+    private String state;
+
+    @Column(nullable = false, length = 100)
+    private String city;
+
+    @Column(nullable = false, length = 255)
+    private String addressLine1;
+
+    @Column(length = 255)
+    private String addressLine2;
+
+    @Column(nullable = false, length = 15)
+    private String zipCode;
+
+    @Column(nullable = false, length = 12)
+    private String phoneNumber;
+
+    @Column(length = 100)
+    private String websiteUrl;
+
+    @Column(length = 500)
+    private String bioDescription;
+
+    @Column(name="event_status", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private OrganizerBankAccountDetailsStatus organizerBankAccountDetailsStatus;
+
+    @CreationTimestamp
+    //Automatically sets the value of the field to the current timestamp when the entity is first saved (i.e., on INSERT).
+    @Column(name="event_created_at", nullable = false, updatable = false)
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    //Automatically updates the field’s value to the current timestamp every time the entity is updated (i.e., on UPDATE).
+    @Column(name="event_updated_at", nullable = false)
+    private LocalDateTime updatedAt;
+
+    @OneToMany(mappedBy = "organizer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Event> events;
+
+    @OneToMany(mappedBy = "organizer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Offer> offers;
+
+//    @OneToMany(mappedBy = "event.organizer", cascade = CascadeType.ALL)
+//    private List<Complaint> complaints;
+
+    @OneToOne(mappedBy = "organizer")
+    private OrganizerApplication organizerApplication;
+
+    @PrePersist
+    public void prePersist() {
+        if (organizerBankAccountDetailsStatus == null) {
+            organizerBankAccountDetailsStatus = OrganizerBankAccountDetailsStatus.PENDING;
+        }
+    }
+
 }
+

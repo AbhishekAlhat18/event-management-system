@@ -41,13 +41,6 @@ public class ComplaintServiceImplementation implements ComplaintService {
 
     @Override
     @Transactional
-    public Complaint updateComplaint(int id, Complaint complaint) {
-        Complaint existingComplaint = complaintRepository.findById(id).get();
-        if(complaint.getComplaintDescription()!=null) {
-            existingComplaint.setComplaintDescription(complaint.getComplaintDescription());
-        }
-        if(complaint.getApproval()!=null)
-            existingComplaint.setApproval(complaint.getApproval());
-        return complaintRepository.save(existingComplaint);
-    }
+    public void updateComplaint(int id, Complaint complaint) {}
+
 }

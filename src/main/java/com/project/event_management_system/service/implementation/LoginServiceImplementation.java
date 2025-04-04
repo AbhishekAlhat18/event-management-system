@@ -2,7 +2,7 @@ package com.project.event_management_system.service.implementation;
 
 import com.project.event_management_system.enums.EmailVerificationStatus;
 import com.project.event_management_system.model.AuthenticationResponse;
-import com.project.event_management_system.model.Person;
+import com.project.event_management_system.model.User;
 import com.project.event_management_system.repository.LoginRepository;
 import com.project.event_management_system.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,7 +56,7 @@ public class LoginServiceImplementation implements LoginService {
     @Override
     public AuthenticationResponse authenticate(String email, String password) {
         //check if person with email exists
-        Optional<Person> person  = this.loginRepository.findByEmail(email);
+        Optional<User> person  = this.loginRepository.findByEmail(email);
         if (person.isEmpty()){
             throw new RuntimeException("Email does not exist");
         }

@@ -14,5 +14,5 @@ public interface ComplaintService {
 
     public void deleteComplaintById(int id);
 
-    public Complaint updateComplaint(int id, Complaint complaint);
+    public void updateComplaint(int id, Complaint complaint);
 }

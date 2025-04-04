@@ -7,11 +7,12 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.Optional;
 
-public interface TokenRepository extends JpaRepository<Token, Integer> {
+public interface TokenRepository extends JpaRepository<Token, Long> {
     Optional<Token> findByToken(String Token);
 
-    // Update to query by Person's id or a concrete subclass (User or Organizer)
-    @Query("SELECT t FROM Token t WHERE t.person.id = :personId")
-    Optional<Token> findTokenByPersonId(@Param("personId") Integer personId);
+     //Update to query by Person's id or a concrete subclass (User or Organizer)
+    @Query("SELECT t FROM Token t WHERE t.user.id = :userId")
+    Optional<Token> findTokenByUserId(@Param("userId") Long userId);
 
+    Optional<Token> findByTokenAndUserEmail(String email, String token);
 }

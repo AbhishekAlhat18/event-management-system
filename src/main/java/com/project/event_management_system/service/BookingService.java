@@ -14,7 +14,7 @@ public interface BookingService {
 
     public void deleteBooking(int id);
 
-    public Booking updatebooking(int id, Booking booking);
+    public void updateBooking(int id, Booking booking);
 
     public List<Booking> getBookingByUserId(int id);
 

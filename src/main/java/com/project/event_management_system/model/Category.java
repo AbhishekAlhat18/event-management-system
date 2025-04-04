@@ -2,69 +2,45 @@ package com.project.event_management_system.model;
 
 
 
-import java.io.Serializable;
+
+import java.time.LocalDateTime;
 import java.util.List;
 import jakarta.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
-/*
-@NoArgsConstructor
-@Setter
+
 @Getter
-@ToString
-*/
-
+@Setter
+@NoArgsConstructor
 @Entity
-@Table(name="category_info",uniqueConstraints= {@UniqueConstraint(columnNames="category_id")})
+@Table(name="category_table")
 public class Category {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY )
-    //@GeneratedValue(strategy= GenerationType. AUTO)
 
-    @Column(name="category_id",unique=true, nullable=false)
-    private int categoryId;
+    @Column(name="id",unique=true, nullable=false)
+    private Long id;
 
-    @Column(name="category_name",unique=true)
-    private String categoryName;
+    @Column(name="name",unique=true,nullable=false)
+    private String name;
 
+    @OneToMany(mappedBy="category")
+    @JsonIgnore     //Later makes this fetch = FetchType.LAZY
+    private List<Event> events;
 
-    @OneToMany(mappedBy="category", cascade = CascadeType.ALL)
-    //@OneToMany(mappedBy="categoryName")
-    @JsonIgnore
-    private List<Event> event;
+    @CreationTimestamp
+    @Column(name = "category_created_at", nullable = false, updatable = false)
+    private LocalDateTime createdAt;
 
-
-    public List<Event> getEvent() {
-        return event;
-    }
-
-    public void setEvent(List<Event> event) {
-        this.event = event;
-    }
-
-    public int getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
-
-
+    @UpdateTimestamp
+    @Column(name = "category_updated_at")
+    private LocalDateTime updatedAt;
 
 }

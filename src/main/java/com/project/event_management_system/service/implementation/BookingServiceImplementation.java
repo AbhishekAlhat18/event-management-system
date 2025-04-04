@@ -40,12 +40,8 @@ public class BookingServiceImplementation implements BookingService {
 
     @Override
     @Transactional
-    public Booking updatebooking(int id, Booking booking) {
-        Booking existingbooking = bookingRepository.findById(id).get();
-        if(booking.getStatus()!=null)
-            existingbooking.setStatus(booking.getStatus());
+    public void updateBooking(int id, Booking booking) {
 
-        return bookingRepository.save(existingbooking);
     }
 
     @Override

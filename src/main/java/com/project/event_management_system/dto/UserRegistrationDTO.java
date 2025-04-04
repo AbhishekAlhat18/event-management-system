@@ -14,10 +14,12 @@ import lombok.Setter;
 public class UserRegistrationDTO {
 
     @NotBlank(message = "First name is required")
+    @Size(min = 2, message = "First name should have at least 2 characters")
     @Size(max = 50, message = "First name should not exceed 50 characters")
     private String firstName;
 
     @NotBlank(message = "Last name is required")
+    @Size(min = 2, message = "Last name should have at least 2 characters")
     @Size(max = 50, message = "Last name should not exceed 50 characters")
     private String lastName;
 

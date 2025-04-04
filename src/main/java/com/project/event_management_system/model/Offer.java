@@ -2,7 +2,7 @@ package com.project.event_management_system.model;
 
 
 
-import java.util.List;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.*;
 
@@ -12,33 +12,36 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="offer_table")
+@Table(name="offer_table") //uniqueConstraints = @UniqueConstraint(columnNames = {"name", "organizer_id"})
 public class Offer{
 
     @Id
     @GeneratedValue( strategy= GenerationType.IDENTITY )
-    //@GeneratedValue( strategy= GenerationType. AUTO)
-    @Column(name="offer_id", unique = true, nullable = false)
-    private int offerId;
+    @Column(name="id", unique = true, nullable = false)
+    private int id;
 
-    @Column(name="offer_name")
-    private String offerName;
-
-    @Column(name="offer_description")
-    private String offerDescription;
-
-    @OneToMany(mappedBy="offer", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Event> event;
+    @Column(name="name", nullable = false)
+    private String name;
 
     @ManyToOne
-    @JoinColumn(name="organizer_id")
+    @JoinColumn(name="organizer_id",nullable = false)
+    @JsonIgnore
     private Organizer organizer;
+
+    @CreationTimestamp
+    @Column(name = "offer_created_at", nullable = false, updatable = false)
+    private LocalDateTime createdAt;
+
+    @UpdateTimestamp
+    @Column(name = "offer_updated_at")
+    private LocalDateTime updatedAt;
 
 }
